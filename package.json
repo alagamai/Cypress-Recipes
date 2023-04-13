@@ -196,14 +196,23 @@
   "scripts": {
     "ci-mode": "npm run <scriptname>",
     "interactive-mode": "./node_modules/.bin/cypress open",
+    "locators": "npx cypress run --record --key 7835e1bc-951d-4c79-beba-157c7faede94 --spec ./cypress/integration/examples/locators/greenCart.js --headed", 
+    "pom-test": "npx cypress run --record --key 7835e1bc-951d-4c79-beba-157c7faede94 --spec cypress/integration/examples/Cypress-POM-Framework-homePage.js --headed",
+    "intercept-test": "npx cypress run --record --key 7835e1bc-951d-4c79-beba-157c7faede94 --spec cypress/integration/examples/intercept-test.js",
+    "cypress-promise": "npx cypress run --record --key 7835e1bc-951d-4c79-beba-157c7faede94  --spec cypress/integration/examples/cypress-promise.js --headed",
+    "promise-test1": "node ./cypress/integration/examples/promises/promise1.js", 
+    "promise-test2": "node ./cypress/integration/examples/promises/promise5.js",
+    "nested-promise-test": "node ./cypress/integration/examples/promises/nested-promise.js",
+    "promise-methods": "node ./cypress/integration/examples/promises/promise-methods.js",
+    "promise-all": "node ./cypress/integration/examples/promises/promise-all.js",
+    "promise-any": "node ./cypress/integration/examples/promises/promise-any.js",
+    "promise-all-settled": "node ./cypress/integration/examples/promises/promise-allSettles.js",
+    "promise-race": "node ./cypress/integration/examples/promises/promise-race.js",
     "seed-db": "npx cypress run --record --key 7835e1bc-951d-4c79-beba-157c7faede94 --spec cypress/integration/examples/Gen-JSON-Seed-Single-DB.js",
     "cypress-mongodb-seed": "npx cypress run --record --key 7835e1bc-951d-4c79-beba-157c7faede94  --spec cypress/integration/examples/cypress-mongodb-plugin-test.js",
     "mongodb-seed": "npx cypress run  --record --key 7835e1bc-951d-4c79-beba-157c7faede94 --spec cypress/integration/examples/mongodb-plugin-test.js",
     "aggregate": "npx cypress run --record --key 7835e1bc-951d-4c79-beba-157c7faede94 --spec cypress/integration/examples/aggregate.js",
-    "promise": "npx cypress run --record --key 7835e1bc-951d-4c79-beba-157c7faede94  --spec cypress/integration/examples/promise.js",
-    "seedAll": "npx cypress run --record --key 7835e1bc-951d-4c79-beba-157c7faede94 --spec cypress/integration/examples/mongo-seeder-plugin-test.js",
-    "intercept-test": "npx cypress run --record --key 7835e1bc-951d-4c79-beba-157c7faede94 --spec cypress/integration/examples/intercept-test.js",
-    "pom-test": "npx cypress run --record --key 7835e1bc-951d-4c79-beba-157c7faede94 --spec cypress/integration/examples/Cypress-POM-Framework-homePage.js --headed"
+    "seedAll": "npx cypress run --record --key 7835e1bc-951d-4c79-beba-157c7faede94 --spec cypress/integration/examples/mongo-seeder-plugin-test.js"
   },
   "author": "",
   "license": "ISC"
