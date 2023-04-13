@@ -1,0 +1,14 @@
+[
+  {
+    "name": "Peter Pan",
+    "gender": "Male"
+  },
+  {
+    "name": "update",
+    "gender": "Male",
+    "newProperty": "new value",
+    "newKey": {
+      "objKey": "objValue"
+    }
+  }
+]

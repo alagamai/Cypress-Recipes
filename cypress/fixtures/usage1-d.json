@@ -1,0 +1,122 @@
+[
+  {
+    "sensor": {
+      "$oid": "6416c0251d77f45086e40ce6"
+    },
+    "time_stamp": "2023-04-03T03:00:00.000Z",
+    "building_id": {
+      "$oid": "6416c0251d77f45036e4ee55"
+    },
+    "building_status": "Active",
+    "energy": 3047281,
+    "power": 2513588
+  },
+  {
+    "sensor": {
+      "$oid": "6416c0251d77f45086e40ce6"
+    },
+    "time_stamp": "2023-04-04T03:00:00.000Z",
+    "building_id": {
+      "$oid": "1356c0251d77f45036e40044"
+    },
+    "building_status": "Inactive",
+    "energy": 3074614,
+    "power": 5102742
+  },
+  {
+    "sensor": {
+      "$oid": "6416c0251d77f45086e40ce6"
+    },
+    "time_stamp": "2023-04-05T03:00:00.000Z",
+    "building_id": {
+      "$oid": "1356c0251d77f45036e40044"
+    },
+    "building_status": "Inactive",
+    "energy": 4056761,
+    "power": 842981
+  },
+  {
+    "sensor": {
+      "$oid": "6416c0251d77f45086e40ce6"
+    },
+    "time_stamp": "2023-04-06T03:00:00.000Z",
+    "building_id": {
+      "$oid": "8906c0251d77f45036e4ffaa"
+    },
+    "building_status": "Active",
+    "energy": 6198277,
+    "power": 7157927
+  },
+  {
+    "sensor": {
+      "$oid": "6416c0251d77f45086e40ce6"
+    },
+    "time_stamp": "2023-04-07T03:00:00.000Z",
+    "building_id": {
+      "$oid": "2346c0251d77f45036e40ce6"
+    },
+    "building_status": "Inactive",
+    "energy": 8928774,
+    "power": 3425178
+  },
+  {
+    "sensor": {
+      "$oid": "6416c0251d77f45086e40ce6"
+    },
+    "time_stamp": "2023-04-08T03:00:00.000Z",
+    "building_id": {
+      "$oid": "1356c0251d77f45036e40044"
+    },
+    "building_status": "Inactive",
+    "energy": 5391275,
+    "power": 8712578
+  },
+  {
+    "sensor": {
+      "$oid": "6416c0251d77f45086e40ce6"
+    },
+    "time_stamp": "2023-04-09T03:00:00.000Z",
+    "building_id": {
+      "$oid": "1356c0251d77f45036e40044"
+    },
+    "building_status": "Inactive",
+    "energy": 647173,
+    "power": 1590444
+  },
+  {
+    "sensor": {
+      "$oid": "6416c0251d77f45086e40ce6"
+    },
+    "time_stamp": "2023-04-10T03:00:00.000Z",
+    "building_id": {
+      "$oid": "2346c0251d77f45036e40ce6"
+    },
+    "building_status": "Inactive",
+    "energy": 6735129,
+    "power": 9490207
+  },
+  {
+    "sensor": {
+      "$oid": "6416c0251d77f45086e40ce6"
+    },
+    "time_stamp": "2023-04-11T03:00:00.000Z",
+    "building_id": {
+      "$oid": "8906c0251d77f45036e4ffaa"
+    },
+    "building_status": "Active",
+    "energy": 5141709,
+    "power": 4267129
+  },
+  {
+    "sensor": {
+      "$oid": "6416c0251d77f45086e40ce6"
+    },
+    "time_stamp": "2023-04-12T03:00:00.000Z",
+    "building_id": {
+      "$oid": "6416c0251d77f45036e4ee55"
+    },
+    "building_status": "Active",
+    "energy": 1273080,
+    "power": 1043347
+  }
+]

@@ -1,0 +1,41 @@
+[{
+  "_id": {
+    "$oid": "5cf91f45a8340a82e171d910"
+  },
+  "sensor": {
+    "$oid": "60e6c7ae0973e96ac3ebaeb8"
+  },
+  "username": "tweety",
+  "email": "tweety@example.com",
+  "password": "$2a$10$WMKahpQBSn9XyVMoIb8Ou.sSNKUmV1haSdqFTsKIqYx8.F111i/yy",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1559664269476"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1559664288545"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "5cf91f5ba8340a82e171d912"
+  },
+  "sensor": {
+    "$oid": "60e6c7ae0973e96ac3ebaeb8"
+  },
+  "username": "bonaparte",
+  "email": "bonaparte@example.com",
+  "password": "$1b$a9$WMKahpQBSn9XyVMoIb8Ou.sSNKUmV1haSdqFTsKIqYx8.F1aai/2a",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1559664269476"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1559664288545"
+    }
+  }
+}]
