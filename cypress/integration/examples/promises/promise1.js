@@ -1,4 +1,4 @@
-let allGood = false;
+let allGood = true;
 
 // Define a Promise
 // A Promise can be in one of three states:
