@@ -199,6 +199,7 @@
     "locators": "npx cypress run --record --key 7835e1bc-951d-4c79-beba-157c7faede94 --spec ./cypress/integration/examples/locators/greenCart.js --headed", 
     "pom-test": "npx cypress run --record --key 7835e1bc-951d-4c79-beba-157c7faede94 --spec cypress/integration/examples/Cypress-POM-Framework-homePage.js --headed",
     "intercept-test": "npx cypress run --record --key 7835e1bc-951d-4c79-beba-157c7faede94 --spec cypress/integration/examples/intercept-test.js",
+    "api-test": "npx cypress run --record --key 7835e1bc-951d-4c79-beba-157c7faede94 --spec ./cypress/integration/examples/API-Testing/api-test1.js",
     "cypress-promise": "npx cypress run --record --key 7835e1bc-951d-4c79-beba-157c7faede94  --spec cypress/integration/examples/cypress-promise.js --headed",
     "promise-test1": "node ./cypress/integration/examples/promises/promise1.js", 
     "promise-test2": "node ./cypress/integration/examples/promises/promise5.js",
