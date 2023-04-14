@@ -9,9 +9,10 @@ const END_PT = {
     "Bearer_Graph": "3df84f0ba9a2028aa6efe7519e3d73466cb301501858acabaad74119082f3b02"
   }
 
-  
+
 describe('api testing', () => {
-    it.only('api post test', () => {
+    let id = '';
+    it('create user - api post test', () => {
         const randomIndex = Math.floor(Math.random() * 2); // generate a random integer between 0 and 1
         const gender = randomIndex === 0 ? "Male" : "Female";
         let name = faker.name.firstName()
@@ -32,10 +33,37 @@ describe('api testing', () => {
 
         cy.get('@resp').then(response => {
             cy.task("log", response.body)
-        })
+            cy.task("log", response.body.id)
+            id = response.body.id
+            cy.task("log", id)
 
+        })
     })
-    it("api get test", () => {
+
+    it('Update user - api patch test', () => {
+        const randomIndex = Math.floor(Math.random() * 2); // generate a random integer between 0 and 1
+        const gender = randomIndex === 0 ? "Male" : "Female";
+        let name = faker.name.firstName()
+        cy.request({
+            method: 'PATCH',
+            url:  END_PT.USER_URL + '/' + id,
+            failOnStatusCode : false,
+            auth: {
+                'bearer':  END_PT.Bearer_Rest
+            },  
+            body: {
+                "name": name, 
+                "email": faker.internet.email(name),
+                "status": "inactive"
+            }
+        }).as('resp')
+
+        cy.get('@resp').then(response => {
+            cy.task("log", response.body)
+        })
+    })
+
+    it("list user - api get test", () => {
 
         cy.request({
             method: 'GET', 
