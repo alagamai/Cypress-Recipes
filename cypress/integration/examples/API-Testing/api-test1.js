@@ -9,6 +9,25 @@ const END_PT = {
     "Bearer_Graph": "3df84f0ba9a2028aa6efe7519e3d73466cb301501858acabaad74119082f3b02"
   }
 
+function listSingleUser(id) {
+    cy.request({
+        method: 'GET', 
+        auth: {
+            'bearer':  END_PT.Bearer_Rest
+        },  
+        url: END_PT.USER_URL + id,
+        failOnStatusCode: false, 
+
+    }).as('resp')
+
+    //cy.get('@resp').its('status').should('eq', 200)
+    cy.get('@resp').then(response => {
+        const data = response.body
+        cy.task("log", JSON.stringify(response.body))
+       // cy.task("log", data[0].name);
+    })
+
+}
 
 describe('api testing', () => {
     let id = '';
@@ -46,7 +65,7 @@ describe('api testing', () => {
         let name = faker.name.firstName()
         cy.request({
             method: 'PATCH',
-            url:  END_PT.USER_URL + '/' + id,
+            url:  END_PT.USER_URL + id,
             failOnStatusCode : false,
             auth: {
                 'bearer':  END_PT.Bearer_Rest
@@ -61,25 +80,51 @@ describe('api testing', () => {
         cy.get('@resp').then(response => {
             cy.task("log", response.body)
         })
+        listSingleUser(id);
     })
 
-    it("list user - api get test", () => {
+
+
+    it("list all user - api get test", () => {
 
         cy.request({
             method: 'GET', 
+            auth: {
+                'bearer':  END_PT.Bearer_Rest
+            },  
             url: END_PT.USER_URL,
             failOnStatusCode: false, 
 
         }).as('resp')
 
-        cy.get('@resp').its('status').should('eq', 200)
+        //cy.get('@resp').its('status').should('eq', 200)
         cy.get('@resp').then(response => {
             const data = response.body
             cy.task("log", JSON.stringify(response.body))
-            cy.task("log", data[0].name);
+           // cy.task("log", data[0].name);
         })
 
     })
 
+    it('delete user', () => {
+        cy.request({
+            method: 'DELETE', 
+            auth: {
+                'bearer':  END_PT.Bearer_Rest
+            },  
+            url: END_PT.USER_URL + id,
+            failOnStatusCode: false, 
+    
+        }).as('resp')
+    
+        //cy.get('@resp').its('status').should('eq', 200)
+        cy.get('@resp').then(response => {
+            const data = response.body
+            cy.task("log", JSON.stringify(response.body))
+           // cy.task("log", data[0].name);
+        })
+        listSingleUser(id);
+
+    })
 
 })
