@@ -196,6 +196,7 @@
   "scripts": {
     "ci-mode": "npm run <scriptname>",
     "interactive-mode": "./node_modules/.bin/cypress open",
+    "traversal-locators": "npx cypress run --record --key 7835e1bc-951d-4c79-beba-157c7faede94 --spec cypress/integration/examples/locators/traversal.js",
     "locators": "npx cypress run --record --key 7835e1bc-951d-4c79-beba-157c7faede94 --spec ./cypress/integration/examples/locators/greenCart.js --headed", 
     "locators1": "npx cypress run --record --key 7835e1bc-951d-4c79-beba-157c7faede94  --spec ./cypress/integration/examples/locators/submitForm.js  --headed",
     "pom-test": "npx cypress run --record --key 7835e1bc-951d-4c79-beba-157c7faede94 --spec cypress/integration/examples/Cypress-POM-Framework-homePage.js --headed",

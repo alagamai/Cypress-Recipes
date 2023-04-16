@@ -34,6 +34,10 @@ describe('traversal locators test', () => {
         traversal.printDomElements()
     })
 
+    it('print DOM elements using children()', () => {
+        traversal.printDomElements_Children()
+    })
+
     it('print DOM elements by index', () => {
         traversal.getDomElementsCount()
         .then(len => {
@@ -43,6 +47,43 @@ describe('traversal locators test', () => {
         })
     })
 
+    it('parent - get parent DOM element', () => {
+        traversal.getParentDOMElement()
+        .then(el => {
+            cy.task("log", el.text())
 
+        })
+    })
+
+    it('parent - assert on parent DOM element', () => {
+        traversal.getParentDOMElement().should('contain', 'highlight vestibulum')
+    })
+
+    it('parent - get parent dom element using contains', () => {
+        traversal.getParentDOMElementUsingContains()
+        .then(el => {
+            cy.task("log", el.text())
+        })
+    })
+
+    // displays grandparent element vs parentuntil does not display grandparent element
+    it('parents - getAllParentsDOM', () => {
+        traversal.getParentsOfDOM()
+        .each(($el, index, $list) => {
+            cy.task("log", $el.text().trim());
+        });
+    })
+
+    // does not display grandparent element 
+    it('parentsUntil - getParentsUntilDOM', () => {
+        traversal.getParentsUntilDOM()
+        .each(($el, index, $list) => {
+            cy.task("log", $el.text().trim());
+        });
+    })
+
+    it('parentsUnitl - checkParentsCount', () => {
+        traversal.assertOnParentsUntilDOM()
+    })
 
 })
