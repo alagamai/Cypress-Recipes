@@ -29,8 +29,7 @@ const generateJSON = () => {
 
     // input from the user
 
-    var randNum =  Math.floor(Math.random() * 4) + 1;
-    randNum = randNum - 1;
+    var randNum =  Math.floor(Math.random() * 4);
     var energyVal = Math.floor(Math.random() * 9990001) + 10000;
 
     var power = Math.floor(Math.random() * 9990001) + 10000;
