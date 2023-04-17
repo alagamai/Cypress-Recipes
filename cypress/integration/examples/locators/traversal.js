@@ -47,7 +47,7 @@ describe('traversal locators test', () => {
         })
     })
 
-    it('parent - get parent DOM element', () => {
+    it('parent() - get parent DOM element', () => {
         traversal.getParentDOMElement()
         .then(el => {
             cy.task("log", el.text())
@@ -55,11 +55,11 @@ describe('traversal locators test', () => {
         })
     })
 
-    it('parent - assert on parent DOM element', () => {
+    it('parent() - assert on parent DOM element', () => {
         traversal.getParentDOMElement().should('contain', 'highlight vestibulum')
     })
 
-    it('parent - get parent dom element using contains', () => {
+    it('parent() - get parent dom element using contains', () => {
         traversal.getParentDOMElementUsingContains()
         .then(el => {
             cy.task("log", el.text())
@@ -67,7 +67,7 @@ describe('traversal locators test', () => {
     })
 
     // displays grandparent element vs parentuntil does not display grandparent element
-    it('parents - getAllParentsDOM', () => {
+    it('parents() - getAllParentsDOM', () => {
         traversal.getParentsOfDOM()
         .each(($el, index, $list) => {
             cy.task("log", $el.text().trim());
@@ -75,15 +75,40 @@ describe('traversal locators test', () => {
     })
 
     // does not display grandparent element 
-    it('parentsUntil - getParentsUntilDOM', () => {
+    it('parentsUntil() - getParentsUntilDOM', () => {
         traversal.getParentsUntilDOM()
         .each(($el, index, $list) => {
             cy.task("log", $el.text().trim());
         });
     })
 
-    it('parentsUnitl - checkParentsCount', () => {
+    it('parentsUnitl() - checkParentsCount', () => {
         traversal.assertOnParentsUntilDOM()
     })
 
+    it('parentsUnitl() - checkParentsCount', () => {
+        traversal.clickChildfromParent()
+    })
+
+    it('closest() - get closest ancestor DOM element', () => {
+        traversal.getClosestDOMofLi().then(e => {
+            cy.task("log", e.text())
+        })
+    })
+
+    it('closest() - get closest ancestor DOM element', () => {
+        traversal.getClosestDOMofDiv().children().first().children().eq(0).then(e => {
+            cy.task("log", "print first child of closest dom" + e.text())
+        })
+        traversal.getClosestDOMofDiv().children().first().children().eq(1).then(e => {
+            cy.task("log", "print second child of closest dom" + e.text())
+        })
+    })
+
+    it('closest() - assert on yieled attribute', () => {
+        traversal.getClosestDOMofUl().should('have.class', 'list-group');
+        traversal.getClosestDOMofUl()
+        .should('contain', 'Events')
+    })
+    
 })

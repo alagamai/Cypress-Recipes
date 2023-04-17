@@ -10,6 +10,11 @@ const ELEMENTS_KS = {
     GRAND_PARENT_ELE: 'blockquote',
     CHILD_ELE1: '.traversal-cite',
     PARENT_ELE: '.clothes-nav',
+    TRAVERSAL_BADGE: '.traversal-badge',
+    CLOSEST_DOM_LI: 'li',
+    CLOSEST_DOM_DIV: 'div',
+    CLOSEST_DOM_UL: 'ul',
+
 }
 
 let cnt;
@@ -79,6 +84,25 @@ class traversal_locators {
         .parentsUntil(ELEMENTS_KS.PARENT_ELE)
         .should('have.length', 2)
     }
+
+    clickChildfromParent() {
+            cy.get(ELEMENTS_KS.PARENT_ELE).find(ELEMENTS_KS.CHILD_ELE)
+            .contains('Pants').click()
+    }
+
+    getClosestDOMofLi() {
+        return cy.get('.traversal-badge').closest('li')
+    }
+
+    getClosestDOMofDiv() {
+        return cy.get('.traversal-badge').closest('div')
+    }
+
+    getClosestDOMofUl() {
+        return cy.get('.traversal-badge').closest('ul')
+    }
+
+
 }
 
 module.exports = new traversal_locators()
