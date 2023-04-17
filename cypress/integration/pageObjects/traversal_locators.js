@@ -97,15 +97,15 @@ class traversal_locators {
     }
 
     getClosestDOMofLi() {
-        return cy.get('.traversal-badge').closest('li')
+        return cy.get(ELEMENTS_KS.TRAVERSAL_BADGE).closest('li')
     }
 
     getClosestDOMofDiv() {
-        return cy.get('.traversal-badge').closest('div')
+        return cy.get(ELEMENTS_KS.TRAVERSAL_BADGE).closest('div')
     }
 
     getClosestDOMofUl() {
-        return cy.get('.traversal-badge').closest('ul')
+        return cy.get(ELEMENTS_KS.TRAVERSAL_BADGE).closest('ul')
     }
 
     getTraversalPills() {
