@@ -14,7 +14,13 @@ const ELEMENTS_KS = {
     CLOSEST_DOM_LI: 'li',
     CLOSEST_DOM_DIV: 'div',
     CLOSEST_DOM_UL: 'ul',
-
+    TRAVERSAL_PILLS: '.nav-pills .active',
+    NAV_ELE : '.nav',
+    BIRDS_GROUP_DOM: '.birds',
+    BIRDS_GROUP_CHILD_DOM: '.birds .active',
+    FOOD_LIST_DOM: '.foods-list',
+    NUTS: '#nuts',
+    ALMONDS: 'almonds'
 }
 
 let cnt;
@@ -68,15 +74,15 @@ class traversal_locators {
         return cy.contains(ELEMENTS_KS.HIGHLIGHT).parent()
     }
 
-    getChildDom() {
+    getChildDom1() {
         return cy.get(ELEMENTS_KS.CHILD_ELE1)
     }
 
     getParentsOfDOM() {
-        return this.getChildDom().parents(ELEMENTS_KS.GRAND_PARENT_ELE)
+        return this.getChildDom1().parents(ELEMENTS_KS.GRAND_PARENT_ELE)
     }
     getParentsUntilDOM() {
-        return this.getChildDom().parentsUntil(ELEMENTS_KS.GRAND_PARENT_ELE)
+        return this.getChildDom1().parentsUntil(ELEMENTS_KS.GRAND_PARENT_ELE)
     }
 
     assertOnParentsUntilDOM() {
@@ -102,7 +108,29 @@ class traversal_locators {
         return cy.get('.traversal-badge').closest('ul')
     }
 
+    getTraversalPills() {
+        return cy.get(ELEMENTS_KS.TRAVERSAL_PILLS)
+    }
 
+    getNavElement() {
+        return cy.get(ELEMENTS_KS.NAV_ELE)
+    }
+    getBirdsGroupDom() {
+        return cy.get(ELEMENTS_KS.BIRDS_GROUP_DOM)
+    }
+
+    getChildOfBirdsGroupDom() {
+        return cy.get(ELEMENTS_KS.BIRDS_GROUP_CHILD_DOM)
+    }
+    findChildDomofBitdsGroup() {
+        return this.getBirdsGroupDom().find(ELEMENTS_KS.CHILD_ELE)
+    }
+    getFoodList() {
+        return cy.get(ELEMENTS_KS.FOOD_LIST_DOM)
+    }
+    findNutsfromFoodList() {
+        return cy.get(ELEMENTS_KS.FOOD_LIST_DOM).find(ELEMENTS_KS.NUTS)
+    }
 }
 
 module.exports = new traversal_locators()

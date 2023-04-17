@@ -51,7 +51,7 @@ describe('traversal locators test', () => {
         traversal.getParentDOMElement()
         .then(el => {
             cy.task("log", el.text())
-
+            console.log(el.text())
         })
     })
 
@@ -63,6 +63,7 @@ describe('traversal locators test', () => {
         traversal.getParentDOMElementUsingContains()
         .then(el => {
             cy.task("log", el.text())
+            console.log(el.text())
         })
     })
 
@@ -71,6 +72,7 @@ describe('traversal locators test', () => {
         traversal.getParentsOfDOM()
         .each(($el, index, $list) => {
             cy.task("log", $el.text().trim());
+            console.log($el.text())
         });
     })
 
@@ -79,6 +81,7 @@ describe('traversal locators test', () => {
         traversal.getParentsUntilDOM()
         .each(($el, index, $list) => {
             cy.task("log", $el.text().trim());
+            console.log($el.text())
         });
     })
 
@@ -93,15 +96,18 @@ describe('traversal locators test', () => {
     it('closest() - get closest ancestor DOM element', () => {
         traversal.getClosestDOMofLi().then(e => {
             cy.task("log", e.text())
+            console.log(e.text())
         })
     })
 
     it('closest() - get closest ancestor DOM element', () => {
         traversal.getClosestDOMofDiv().children().first().children().eq(0).then(e => {
             cy.task("log", "print first child of closest dom" + e.text())
+            console.log(e.text())
         })
         traversal.getClosestDOMofDiv().children().first().children().eq(1).then(e => {
             cy.task("log", "print second child of closest dom" + e.text())
+            console.log(e.text())
         })
     })
 
@@ -111,4 +117,55 @@ describe('traversal locators test', () => {
         .should('contain', 'Events')
     })
     
+    it('siblings() - get all siblings dom elements of selected element', () => {
+        traversal.getTraversalPills().siblings()
+        .each($el => {
+            cy.task("log", "Sibling text : " + $el.text())
+            cy.log($el.text())
+        })
+
+    })
+
+    it('siblings() - locate specific sibling element and click', () => {
+        traversal.getTraversalPills()
+        .siblings().contains('Messages').click()
+    })
+
+    it('siblings() - assert on parent of sibling', () => {
+        traversal.getTraversalPills()
+        .siblings().contains('Messages').parent()
+        .should('have.prop', 'tagName', 'LI')
+
+    })
+
+    it('siblings() - access ancestor of sibling', () => {
+        traversal.getTraversalPills()
+        .siblings().contains('Messages').parents(traversal.getNavElement())
+        .should('have.class', 'traversal-pills')
+    })
+
+    it('prev() - get previous sibling DOM element', () => {
+        traversal.getChildOfBirdsGroupDom()
+        .prev().should('contain', 'Lorikeets' )
+    })
+
+    it('prevall() - get previous sibling DOM element', () => {
+        traversal.findChildDomofBitdsGroup()
+        .prevAll().each(($el, indiex, $list) => {
+            cy.task("log", $el.text())
+        })
+    })
+
+    it('prevUntil() - get prev doms until specified selecttor', () => {
+        traversal.findNutsfromFoodList().prevUntil('#veggies').each(el => {
+            cy.task("log", el.text())
+        })
+    })
+
+    it('prevUntil() - get prev doms until specified selecttor', () => {
+        traversal.getFoodList().contains('almonds').prevUntil('#veggies').each(el => {
+            cy.task("log", el.text())
+        })
+    })
+
 })
